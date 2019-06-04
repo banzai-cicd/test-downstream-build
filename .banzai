@@ -17,6 +17,19 @@ banzai([
       name: 'build'
     ],
     [
+      name: 'My Arbitrary Stage',
+      steps: [
+        /.*/ : [
+          [
+            closure: { logger "YO I RAN A CLOSURE FROM A CUSTOM STAGE!" }
+          ], 
+          [
+            script: 'customStageScript.sh'
+          ]
+        ]
+      ]
+    ]
+    [
       name: 'scans:vulnerability'
     ],
     [

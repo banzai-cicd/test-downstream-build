@@ -1,0 +1,3 @@
+#!/bin/bash 
+
+echo "OMG I RAN A SCRIPT FROM A CUSTOM STAGE"

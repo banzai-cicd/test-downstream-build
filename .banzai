@@ -27,7 +27,6 @@ banzai([
         ]
       ]
     ],
-    [ name: 'scans:vulnerability' ],
     [ name: 'publish' ]
   ],
   build: [
@@ -35,17 +34,5 @@ banzai([
   ],
   publish: [
     /.*/: [:]
-  ],
-  vulnerabilityScans: [
-    /develop|master/: [
-      [
-        type: 'checkmarx',
-        credId: 'ge-checkmarx',
-        resultEmails: ['banzai@ge.com'],
-        preset: '17',
-        teamUUID: '53f766d4-5402-4980-8a15-2655ba6d18f0',
-        abortOnError: false
-      ]
-    ]
   ]
 ])

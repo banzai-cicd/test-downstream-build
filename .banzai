@@ -1,4 +1,4 @@
-@Library('Banzai@typed-config') _
+@Library('Banzai@custom-stages') _
 banzai([
   appName: 'test-downstream-build',
   preCleanWorkspace: true,
@@ -12,7 +12,36 @@ banzai([
       ]
     ]
   ],
+  stages: [
+    [
+      name: 'build'
+    ],
+    [
+      name: 'scans:vulnerability'
+    ]
+    [
+      name: 'publish'
+    ]
+  ],
   build: [
     /.*/: [:]
+  ],
+  publish: [
+    /.*/: [:]
+  ],
+  vulnerabilityScans: [
+    /develop|master/: [
+      [
+        type: 'coverity',
+        credId: 'coverity-auth-key-file',
+        toolId: 'coverity-2018.12',
+        serverHost: 'coverity.power.ge.com',
+        serverPort: '443',
+        resultEmails: ['banzai@ge.com'],
+        buildCmd: "echo 'we did it! we ran a coverity scan!'",
+        projectName: '1000373486_mdi',
+        abortOnError: false
+      ]
+    ]
   ]
 ])

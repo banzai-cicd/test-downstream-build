@@ -18,7 +18,7 @@ banzai([
     ],
     [
       name: 'scans:vulnerability'
-    ]
+    ],
     [
       name: 'publish'
     ]

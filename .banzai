@@ -13,9 +13,7 @@ banzai([
     ]
   ],
   stages: [
-    [
-      name: 'build'
-    ],
+    [ name: 'build' ],
     [
       name: 'My Arbitrary Stage',
       steps: [
@@ -29,12 +27,8 @@ banzai([
         ]
       ]
     ],
-    [
-      name: 'scans:vulnerability'
-    ],
-    [
-      name: 'publish'
-    ]
+    [ name: 'scans:vulnerability' ],
+    [ name: 'publish' ]
   ],
   build: [
     /.*/: [:]
@@ -45,14 +39,11 @@ banzai([
   vulnerabilityScans: [
     /develop|master/: [
       [
-        type: 'coverity',
-        credId: 'coverity-auth-key-file',
-        toolId: 'coverity-2018.12',
-        serverHost: 'coverity.power.ge.com',
-        serverPort: '443',
+        type: 'checkmarx',
+        credId: 'ge-checkmarx',
         resultEmails: ['banzai@ge.com'],
-        buildCmd: "echo 'we did it! we ran a coverity scan!'",
-        projectName: '1000373486_mdi',
+        preset: '17',
+        teamUUID: '53f766d4-5402-4980-8a15-2655ba6d18f0',
         abortOnError: false
       ]
     ]

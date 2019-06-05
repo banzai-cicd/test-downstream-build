@@ -41,8 +41,7 @@ banzai([
       banzai: 'banzai@ge.com'
     ],
     groups: [
-      everyone: ['simon', 'banzai'],
-      justMe: ['simon']
+      everyone: ['simon'],
     ]
   ],
   notifications: [

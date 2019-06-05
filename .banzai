@@ -1,9 +1,9 @@
-@Library('Banzai@develop') _
+@Library('Banzai@notifications-refactor') _
 banzai([
   appName: 'test-downstream-build',
   preCleanWorkspace: true,
   flowdock: [
-    /.*/: [
+    banzaiFlow: [
       credId: 'banzai-flowtoken',
       author: [
         name: 'Banzai',
@@ -34,5 +34,22 @@ banzai([
   ],
   publish: [
     /.*/: [:]
+  ],
+  notifications: [
+    flowdock: [
+      /.*/: [
+        'banzaiFlow': ['.*']
+      ]
+    ],
+    email: [
+      /.*/: [
+        groups: [
+          'everyone': ['PIPELINE:(FAILURE|SUCCESS)']
+        ],
+        individuals: [
+          'simon': ['PIPELINE:PENDING']
+        ]
+      ]
+    ]
   ]
 ])

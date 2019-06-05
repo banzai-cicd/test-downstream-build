@@ -2,16 +2,6 @@
 banzai([
   appName: 'test-downstream-build',
   preCleanWorkspace: true,
-  flowdock: [
-    banzaiFlow: [
-      credId: 'banzai-flowtoken',
-      author: [
-        name: 'Banzai',
-        avatarUrl: 'https://github.build.ge.com/avatars/u/55576?s=400&u=700c7e70356d1f5a679908c1d7c7e5bf8e2beab6',
-        email: 'banzai@ge.com'
-      ]
-    ]
-  ],
   stages: [
     [ name: 'build' ],
     [
@@ -19,7 +9,7 @@ banzai([
       steps: [
         /.*/: [
           [
-            closure: { logger "YO I RAN A CLOSURE FROM A CUSTOM STAGE!" }
+            closure: { logger "YO I RAN A GROOVY CLOSURE FROM A CUSTOM STAGE!" }
           ], 
           [
             script: 'customStageScript.sh'
@@ -34,6 +24,26 @@ banzai([
   ],
   publish: [
     /.*/: [:]
+  ],
+  flowdock: [
+    banzaiFlow: [
+      credId: 'banzai-flowtoken',
+      author: [
+        name: 'Banzai',
+        avatarUrl: 'https://github.build.ge.com/avatars/u/55576?s=400&u=700c7e70356d1f5a679908c1d7c7e5bf8e2beab6',
+        email: 'banzai@ge.com'
+      ]
+    ]
+  ],
+  email: [
+    addresses: [
+      simon: 'simon.townsend1@ge.com',
+      banzai: 'banzai@ge.com'
+    ],
+    groups: [
+      everyone: ['simon', 'banzai'],
+      justMe: ['simon']
+    ]
   ],
   notifications: [
     flowdock: [

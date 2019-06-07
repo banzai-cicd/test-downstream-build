@@ -23,7 +23,10 @@ banzai([
     /.*/: [:]
   ],
   publish: [
-    /.*/: [:]
+    /master/: [:]
+  ],
+  deploy: [
+    /master/: [:]
   ],
   flowdock: [
     banzaiFlow: [

@@ -17,7 +17,8 @@ banzai([
         ]
       ]
     ],
-    [ name: 'publish' ]
+    [ name: 'publish' ],
+    [ name: 'deploy' ]
   ],
   build: [
     /.*/: [:]

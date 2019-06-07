@@ -1,4 +1,4 @@
-@Library('Banzai@notifications-refactor') _
+@Library('Banzai@banzai-base-stage') _
 banzai([
   appName: 'test-downstream-build',
   preCleanWorkspace: true,

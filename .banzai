@@ -1,4 +1,4 @@
-@Library('Banzai@banzai-base-stage') _
+@Library('Banzai@develop') _
 banzai([
   appName: 'test-downstream-build',
   preCleanWorkspace: true,

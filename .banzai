@@ -9,10 +9,10 @@ banzai([
       steps: [
         /.*/: [
           [
-            closure: { logger "YO I RAN A GROOVY CLOSURE FROM A CUSTOM STAGE!" }
+            groovy: { logger "YO I RAN A GROOVY CLOSURE FROM A CUSTOM STAGE!" }
           ], 
           [
-            script: 'customStageScript.sh'
+            shell: 'customStageScript.sh'
           ]
         ]
       ]

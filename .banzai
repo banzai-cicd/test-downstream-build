@@ -1,7 +1,9 @@
 @Library('Banzai@develop') _
 banzai([
   appName: 'test-downstream-build',
-  preCleanWorkspace: true,
+  cleanWorkspace: [
+    post: true
+  ],
   stages: [
     [ name: 'build' ],
     [

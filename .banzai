@@ -1,4 +1,4 @@
-@Library('Banzai@develop') _
+@Library('Banzai@opensource') _
 banzai([
   appName: 'test-downstream-build',
   cleanWorkspace: [

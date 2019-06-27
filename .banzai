@@ -1,4 +1,5 @@
-@Library('Banzai@opensource') _
+library 'BanzaiOS@master'
+
 banzai([
   appName: 'test-downstream-build',
   cleanWorkspace: [

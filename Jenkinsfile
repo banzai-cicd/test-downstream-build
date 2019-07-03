@@ -1,4 +1,4 @@
-library 'BanzaiOS@develop'
+library 'BanzaiCICD@develop'
 
 banzai([
   appName: 'test-downstream-build',
@@ -37,18 +37,17 @@ banzai([
       credId: 'banzai-flowtoken',
       author: [
         name: 'Banzai',
-        avatarUrl: 'https://github.build.ge.com/avatars/u/55576?s=400&u=700c7e70356d1f5a679908c1d7c7e5bf8e2beab6',
-        email: 'banzai@ge.com'
+        avatarUrl: 'https://static.greatbigcanvas.com/images/square/raygun/seafoam-wave,2033571.jpg?max=128',
+        email: 'banzaicicd@gmail.com'
       ]
     ]
   ],
   email: [
     addresses: [
-      simon: 'simon.townsend1@ge.com',
-      banzai: 'banzai@ge.com'
+      banzai: 'banzaicicd@gmail.com'
     ],
     groups: [
-      everyone: ['simon'],
+      everyone: ['banzai'],
     ]
   ],
   notifications: [
@@ -63,7 +62,7 @@ banzai([
           'everyone': ['PIPELINE:(FAILURE|SUCCESS)']
         ],
         individuals: [
-          'simon': ['PIPELINE:PENDING']
+          'banzai': ['PIPELINE:PENDING']
         ]
       ]
     ]
